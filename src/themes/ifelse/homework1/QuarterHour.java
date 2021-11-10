@@ -1,4 +1,4 @@
-package themes.function.homework1;
+package themes.if_else.homework1;
 
 /**
  * В переменной minutes лежит число от 0 до 59.
@@ -9,7 +9,7 @@ package themes.function.homework1;
 public class QuarterHour {
     public static void main(String[] args) {
         int minutes = 20;
-        quarter(minutes );
+        quarter(minutes);
     }
 
     public static void quarter(int minutes) {
