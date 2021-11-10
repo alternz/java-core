@@ -4,4 +4,5 @@ public class CompareSquareTriangle {
     public static void main(String[] args) {
 
     }
+
 }
