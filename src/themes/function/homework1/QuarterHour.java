@@ -1,4 +1,4 @@
-package function.homework1;
+package themes.function.homework1;
 
 /**
  * В переменной minutes лежит число от 0 до 59.
