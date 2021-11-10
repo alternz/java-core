@@ -1,4 +1,4 @@
-package themes.if_else.homework1;
+package themes.ifelse.homework1;
 
 /**
  * В переменной minutes лежит число от 0 до 59.
@@ -7,12 +7,13 @@ package themes.if_else.homework1;
  * Протестировать функцию в main.
  */
 public class QuarterHour {
+
     public static void main(String[] args) {
         int minutes = 20;
-        quarter(minutes);
+        calculateQuarter(minutes);
     }
 
-    public static void quarter(int minutes) {
+    public static void calculateQuarter(int minutes) {
         if (minutes >= 0 && minutes <= 14) {
             System.out.println("В первую четверть.");
         }
