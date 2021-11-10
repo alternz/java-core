@@ -9,21 +9,21 @@ import java.util.Scanner;
  * Например: 4508 -> 8054, 4700 -> 74, 1234567 -> 7654321
  * Примечание: для решения может понадобится функция возведение числа в степень: Math.pow(число, степень)
  */
-public class InverseClass {
+public class ReverseClass {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число: ");
-        int value = scanner.nextInt();
-        System.out.println("Инвертированное число: " + inverse(value));
+        int number = scanner.nextInt();
+        System.out.println("Инвертированное число: " + reverseNumber(number));
 
     }
 
-    public static int inverse(int value) {
-        int inverse = 0;
-        while (value > 0) {
-            inverse = inverse * 10 + value % 10;
+    public static int reverseNumber(int value) {
+        int reverse = 0;
+        while (value != 0) {
+            reverse = reverse * 10 + value % 10;
             value /= 10;
         }
-        return inverse;
+        return reverse;
     }
 }
