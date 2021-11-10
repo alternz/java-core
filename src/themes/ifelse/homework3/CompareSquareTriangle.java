@@ -1,4 +1,4 @@
-package themes.if_else.homework3;
+package themes.ifelse.homework3;
 
 /**
  * Даны два прямоугольных треугольника. Каждый из них задается двумя целочисленными переменными a и b - стороны треугольника.
@@ -9,20 +9,21 @@ package themes.if_else.homework3;
  * Учитывать, что площадь может быть вещественным числом.
  */
 public class CompareSquareTriangle {
+
     public static void main(String[] args) {
         int a1 = 5;
         int b1 = 8;
-        double S1 = squareTriangle(a1, b1);
+        double S1 = calculateSquare(a1, b1);
         System.out.println(S1);
 
         int a2 = 8;
         int b2 = 14;
-        double S2 = squareTriangle(a2, b2);
+        double S2 = calculateSquare(a2, b2);
         System.out.println(S2);
         compareSquare(S1, S2);
     }
 
-    public static double squareTriangle(int a, int b) {
+    public static double calculateSquare(int a, int b) {
         double S;
         S = a * b * 0.5;
         return S;

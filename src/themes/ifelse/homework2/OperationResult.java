@@ -1,4 +1,4 @@
-package themes.if_else.homework2;
+package themes.ifelse.homework2;
 
 /**
  * Даны 3 переменные:
@@ -12,10 +12,11 @@ package themes.if_else.homework2;
  * Результат: 34.5 (24.4 + 10.1)
  */
 public class OperationResult {
+
     public static void main(String[] args) {
         double operand1 = 233.23;
         double operand2 = 2342.54;
-        char operation = '/';
+        char operation = '*';
         System.out.println(operationFunction(operand1, operand2, operation));
     }
 
