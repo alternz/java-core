@@ -16,14 +16,11 @@ public class QuarterHour {
     public static void calculateQuarter(int minutes) {
         if (minutes >= 0 && minutes <= 14) {
             System.out.println("В первую четверть.");
-        }
-        else if (minutes >= 15 && minutes <= 29) {
+        } else if (minutes >= 15 && minutes <= 29) {
             System.out.println("Во вторую четверть.");
-        }
-        else if (minutes >= 30 && minutes <= 44) {
+        } else if (minutes >= 30 && minutes <= 44) {
             System.out.println("В третью четверть.");
-        }
-        else if (minutes >= 45 && minutes <= 59) {
+        } else if (minutes >= 45 && minutes <= 59) {
             System.out.println("В четвертую четверть.");
         }
     }
