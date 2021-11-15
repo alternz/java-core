@@ -10,16 +10,16 @@ package themes.string.task1;
 public class Task1 {
 
     public static void main(String[] args) {
-        String newString = ("abc Cpddd Dio OsfWw");
+        String newString = "abc Cpddd Dio OsfWw";
         System.out.println(format(newString));
     }
 
-    public static String format(String value) {
-        String valueUpper = value.replace(" ", "").toUpperCase();
-        String resultFinal = "";
+    public static StringBuilder format(String value) {
+        StringBuilder valueUpper = new StringBuilder(value.replace(" ", "").toUpperCase());
+        StringBuilder resultFinal = new StringBuilder();
         for (int i = 0; i < valueUpper.length() - 1; i++) {
             if (i == 0 || (valueUpper.charAt(i - 1) != valueUpper.charAt(i))) {
-                resultFinal += valueUpper.charAt(i);
+                resultFinal.append(valueUpper.charAt(i));
             }
         }
         return resultFinal;

@@ -12,12 +12,12 @@ package themes.string.task2;
 public class Task2 {
 
     public static void main(String[] args) {
-        String newString = ("Привет 8, как 1 2 твои дела? Мож4ет4, сдe8елать 3 де5ло?");
-        int[] digitArray = convertStringToArray(newString);
+        String newString = "Привет 8, как 1 2 твои дела? Мож4ет4, сдe8елать 3 де5ло?";
+        int[] digitArray = exctractStringToArray(newString);
         System.out.println("Cумма всех чисел из строки равна: " + sumArray(digitArray));
     }
 
-    public static int[] convertStringToArray(String value) {
+    public static int[] exctractStringToArray(String value) {
         String[] digit = value.replaceAll("\\D+", "").split("");
         int[] outArr = new int[digit.length];
         for (int i = 0; i < digit.length; i++) {

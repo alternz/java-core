@@ -11,37 +11,43 @@ public class Task3 {
 
     public static void main(String[] args) {
         int[] newArray = {-4, 0, 1, 9, 20, -18, 3};
-        int[][] changeArray = changeArray(newArray);
-        for (int i = 0; i < changeArray.length; i++) {
-            for (int j = 0; j < changeArray[i].length; j++) {
-                System.out.print(changeArray[i][j] + " ");
+        int[] count = countArray(newArray);
+        int[][] change = changeArray(count, newArray);
+        for (int i = 0; i < change.length; i++) {
+            for (int j = 0; j < change[i].length; j++) {
+                System.out.print(change[i][j] + " ");
             }
             System.out.println();
         }
     }
 
-    public static int[][] changeArray(int[] values) {
-        int countNull = 0;
+    public static int[] countArray(int[] values) {
+        int countZero = 0;
         int countPositive = 0;
         int countNegative = 0;
         for (int value : values) {
             if (value == 0) {
-                countNull++;
+                countZero++;
             } else if (value > 0) {
                 countPositive++;
             } else if (value < 0) {
                 countNegative++;
             }
+
         }
-        int[] newArrayNull = new int[countNull];
-        int[] newArrayPositive = new int[countPositive];
-        int[] newArrayNegative = new int[countNegative];
+        return new int[]{countZero, countPositive, countNegative};
+    }
+
+    public static int[][] changeArray(int[] count, int[] values) {
+        int[] newArrayZero = new int[count[0]];
+        int[] newArrayPositive = new int[count[1]];
+        int[] newArrayNegative = new int[count[2]];
         int ix = 0;
         int ip = 0;
         int in = 0;
         for (int value : values) {
             if (value == 0) {
-                newArrayNull[ix] = value;
+                newArrayZero[ix] = value;
                 ix++;
             } else if (value > 0) {
                 newArrayPositive[ip] = value;
@@ -51,7 +57,6 @@ public class Task3 {
                 in++;
             }
         }
-        int[][] arrayAll = {newArrayPositive, newArrayNull, newArrayNegative};
-        return arrayAll;
+        return new int[][]{newArrayPositive, newArrayZero, newArrayNegative};
     }
 }

@@ -12,11 +12,12 @@ public class Task2 {
     public static void main(String[] args) {
         char[] symbolArray = {'a', '6', 'y', 'P', 'T', 'q', '9', '+'};
         int[] newArray = convertCharToInt(symbolArray);
-        int average = calculateAverage(newArray);
+        double average = calculateAverage(newArray);
+        System.out.println(average);
         printMoreAverage(average, newArray);
     }
 
-    public static void printMoreAverage(int average, int[] values) {
+    public static void printMoreAverage(double average, int[] values) {
         for (int value1 : values) {
             if (value1 > average) {
                 System.out.print(value1 + " ");
@@ -24,18 +25,18 @@ public class Task2 {
         }
     }
 
-    public static int calculateAverage(int[] values) {
+    public static double calculateAverage(int[] values) {
         int sum = 0;
         for (int value : values) {
             sum += value;
         }
-        return sum / values.length;
+        return (double) sum / values.length;
     }
 
     public static int[] convertCharToInt(char[] values) {
         int[] newArray = new int[values.length];
         for (int i = 0; i < values.length; i++) {
-            newArray[i] = (int) values[i];
+            newArray[i] = values[i];
         }
         return newArray;
     }
