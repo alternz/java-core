@@ -23,7 +23,6 @@ public class Task2 {
         for (int i = 0; i < digit.length; i++) {
             outArr[i] = Integer.parseInt(digit[i]);
         }
-
         return outArr;
     }
 
