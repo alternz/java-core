@@ -14,19 +14,57 @@ package themes.oopbuilding;
  * его этажах, квартирах и комнатах, вызывая методы print.
  */
 public class CompositionTask {
+
     public static void main(String[] args) {
-        House house = new House(1, new int[]{1, 2});
-        Floor floor1 = new Floor(1, new int[]{1, 2, 3});
-        Apartments apartments1 = new Apartments(1, new int[]{1, 2});
-        Room room1 = new Room(true);
-        Apartments apartments2 = new Apartments(2, new int[]{1, 2, 3});
-        Apartments apartments3 = new Apartments(2, new int[]{1});
-        Floor floor2 = new Floor(2, new int[]{4, 5, 6});
-        Floor floor3 = new Floor(3, new int[]{7, 8, 9});
-        printAllInformation(house);
+        Room[] rooms1 = {
+                new Room(false),
+                new Room(false)
+        };
+        Room[] rooms2 = {
+                new Room(true),
+                new Room(false),
+                new Room(false),
+        };
+        Apartment[] apartments1 = {
+                new Apartment(1, rooms1),
+                new Apartment(2, rooms2)
+        };
+        Room[] rooms3 = {
+                new Room(false),
+        };
+        Room[] rooms4 = {
+                new Room(true),
+                new Room(true),
+                new Room(false)
+        };
+        Room[] rooms5 = {
+                new Room(false),
+                new Room(false),
+        };
+        Apartment[] apartments2 = {
+                new Apartment(3, rooms3),
+                new Apartment(4, rooms4),
+                new Apartment(5, rooms5)
+        };
+        Floor[] floors = {
+                new Floor(1, apartments1),
+                new Floor(2, apartments2)
+        };
+        House house = new House(2, floors);
+
+        printInformation(house);
     }
 
-    public static void printAllInformation(House house) {
+    public static void printInformation(House house) {
         house.printHouse();
+        for (Floor floor : house.getFloor()) {
+            floor.printFloor();
+            for (Apartment apartment : floor.getApartments()) {
+                apartment.printApart();
+                for (Room room : apartment.getRooms()) {
+                    room.printRoom();
+                }
+            }
+        }
     }
 }

@@ -1,25 +1,20 @@
 package themes.oopbuilding;
 
 public class House {
-    private int number;
-    private int[] floor;
 
-    public House(int number, int[] floor) {
+    private final int number;
+    private final Floor[] floors;
+
+    public House(int number, Floor[] floors) {
         this.number = number;
-        this.floor = floor;
+        this.floors = floors;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public int getFloor() {
-        return floor.length;
+    public Floor[] getFloor() {
+        return floors;
     }
 
     public void printHouse() {
-        System.out.println("Номер дома " + getNumber() + "\nКоличество этажей: " + getFloor());
+        System.out.println("Номер дома " + number + "\nКоличество этажей: " + floors.length);
     }
-
-
 }
