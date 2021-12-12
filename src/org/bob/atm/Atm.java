@@ -1,9 +1,9 @@
 package org.bob.atm;
 
 public class Atm {
-    private final int TWENTY_DOLLARS = 20;
-    private final int FIFTY_DOLLARS = 50;
-    private final int HUNDRED_DOLLARS = 100;
+    private static final int TWENTY_DOLLARS = 20;
+    private static final int FIFTY_DOLLARS = 50;
+    private static final int HUNDRED_DOLLARS = 100;
 
     private int bill20;
     private int bill50;
