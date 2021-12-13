@@ -30,10 +30,8 @@ public class Atm {
     public boolean withdrawMoney(int amountOfCash) {
         boolean result = false;
         int withdrawBill100;
-        int remainingBalance;
-
         for (withdrawBill100 = 0; withdrawBill100 < this.bill100; withdrawBill100++) {
-            remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100;
+            int remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100;
             if (remainingBalance < HUNDRED_DOLLARS) {
                 result = true;
                 break;
@@ -41,7 +39,7 @@ public class Atm {
         }
         int withdrawBill50;
         for (withdrawBill50 = 0; withdrawBill50 < this.bill50; withdrawBill50++) {
-            remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100 - FIFTY_DOLLARS * withdrawBill50;
+            int remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100 - FIFTY_DOLLARS * withdrawBill50;
             if (remainingBalance < FIFTY_DOLLARS) {
                 result = true;
                 break;
@@ -49,7 +47,7 @@ public class Atm {
         }
         int withdrawBill20;
         for (withdrawBill20 = 0; withdrawBill20 <= this.bill20; withdrawBill20++) {
-            remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100 - FIFTY_DOLLARS * withdrawBill50
+            int remainingBalance = amountOfCash - HUNDRED_DOLLARS * withdrawBill100 - FIFTY_DOLLARS * withdrawBill50
                     - TWENTY_DOLLARS * withdrawBill20;
             if (remainingBalance == 0) {
                 result = true;
@@ -68,12 +66,14 @@ public class Atm {
                 }
             }
         }
-        System.out.println("Количество купюр номиналом 20: " + withdrawBill20 +
-                "\nКоличество купюр номиналом 50: " + withdrawBill50 +
-                "\nКоличество купюр номиналом 100: " + withdrawBill100);
-        this.bill20 -= withdrawBill20;
-        this.bill50 -= withdrawBill50;
-        this.bill100 -= withdrawBill100;
+        if (result) {
+            System.out.println("Количество купюр номиналом 20: " + withdrawBill20 +
+                    "\nКоличество купюр номиналом 50: " + withdrawBill50 +
+                    "\nКоличество купюр номиналом 100: " + withdrawBill100);
+            this.bill20 -= withdrawBill20;
+            this.bill50 -= withdrawBill50;
+            this.bill100 -= withdrawBill100;
+        }
         return result;
     }
 
